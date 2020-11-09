@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+
+FirstNumber:<input type="text" name="num1" id="num1"><br>
+SecondNumber:<input type="text" name="num2" id="num2"><br>
+<p class="myresult"></p>
+<button onclick="sum()">sum</button>
+<button onclick="sub()">sub</button>
+<button onclick="mul()">mul</button>
+<button onclick="div()">div</button>
+<button onclick="mol()">mol</button>
+
+<script type="text/javascript">
+	
+	function sum(){
+		var first_number=parseInt(document.querySelector("#num1").value);
+	var second_number=parseInt(document.getElementById("num2").value);
+		document.querySelector(".myresult").innerText=first_number+second_number;
+	}
+
+	function sub(){
+	var first_number=parseInt(document.getElementById("num1").value);
+	var second_number=parseInt(document.getElementById("num2").value);
+		console.log(first_number-second_number);
+	}
+</script>
+</body>
+</html>

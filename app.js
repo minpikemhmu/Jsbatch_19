@@ -58,8 +58,9 @@ console.log(stringmonth);*/
 
 //push() and pop();
 var months=["Jan","Feb","March","April","May","June","July"];
-var last=months[months.length-1];
-console.log(last);
+months.forEach( function(element, index) {
+	//console.log(element);
+});
 
 /*months.push("April");
 console.log(months);
@@ -85,8 +86,8 @@ console.log(months);*/
 var myarray=months.concat(array);
 console.log(myarray);*/
 
-var person={firstname:"John",lastname:"Doe"};
-console.log(person.firstname);
+/*var person={firstname:"John",lastname:"Doe"};*/
+//console.log(person.firstname);
 
 
 //asssoc
@@ -94,3 +95,111 @@ console.log(person.firstname);
 //operateors
 //conditional statement
 //looping
+
+
+/*var firstname=20;
+var lastname="Aung";
+var yes=false;
+
+var name=firstname+yes;
+console.log(name);*/
+
+/*var FirstName="Mg Mg";//pascale case;
+var first_name="Mg Mg"//underscore convention
+var firstName="Mg Mg"//camel case;
+var First_Name="Mg Mg"//snake case;const */
+
+/*let name;//declare
+let age=20;
+
+name=age>20?"Mg Mg":"Aung Aung";
+console.log(name);*/
+
+
+//object
+
+/*let person={
+	name:"Mg Mg",
+	age :20,
+	married:false,
+	family:["U Ba","Daw Mya","su su"],
+}
+//console.log(typeof person);
+var json=JSON.stringify(person);
+//console.log(json);
+
+//console.log(typeof json);
+var obj=JSON.parse(json);
+console.log(obj);
+console.log(typeof obj)*/
+
+/*console.log(person.myfunction());
+*/
+
+//const name="mg mg";// not variable re assign
+//console.log(name);
+/*const person={
+	name:"Mg Mg",
+	age :20,
+	married:false,
+	family:["U Ba","Daw Mya","su su"],
+};
+
+const array=["min","pike","Hmu"];
+array[1]="lin";
+//console.log(array);
+
+person.name="Aung Aung";
+//console.log(person)
+
+//+,-,*,/,%
+let num1=10;
+let num2=5
+//console.log(num1%num2);
+
+//num1+=1;
+
+console.log(++num1);
+console.log(--num2);*/
+
+//==,===,!=,>=,<=,>,<
+
+/*var x=4!=5;
+console.log(x);*/
+
+/*var num=20;
+var num1="20";
+
+console.log(num==num1);*/
+
+//&& ,//
+//&& all condition is true;
+//  or// one condition is true;
+
+//conditional statement
+//if,if else,if else if else,switch
+/*if(4<5){
+console.log("answer is right");	
+}else{
+console.log("answer is wrong");
+}*/
+
+
+/*if(4<5 && 3>2){
+	console.log("answer is right");
+}*/
+
+
+/*var age=20;
+if(age==11){
+	console.log("your age is 11");
+}else if(age==15){
+	console.log("your age is 15");
+}else if(age==20){
+	console.log("your age is 20")
+}
+else{
+	console.log("your age is 50");
+}*/
+
+
