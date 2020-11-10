@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch condition</title>
+
+</head>
+<body>
+	<p id="demo">
+		
+	</p>
+<script type="text/javascript">
+//0 sundaay,1 Monday,2 Tuesday,
+	var day;
+	var today=new Date().getDay();
+	
+	switch (today) {
+
+			default:
+			day="Looking foreward to the weekend";
+			break;
+
+			case 4:
+			case 5:
+			day="Soon it is weekend";
+			break;
+
+			case 0:
+			case 6:
+			day="It is weekend";
+			break;		
+		}
+		document.getElementById("demo").innerHTML="Today is " +day;
+
+
+</script>
+</body>
+</html>
