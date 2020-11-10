@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function</title>
+	<script type="text/javascript">
+		function show(name){
+			console.log(name +"How are you");
+		}
+
+		show("mg mg");
+
+		function average(num1,num2=6,num3=7){
+			var num=(num1+num2+num3)/3;
+			console.log(num)
+		}
+
+		average(5);
+
+
+		//namelessfunction
+		var x=function(a,b){
+			return a+b;
+		}
+
+		var sum=x(2,3);
+		console.log(sum);
+
+		//arrow function
+		var add=(a,b)=>{return a+b};
+
+		var mysum=add(4,5);
+		console.log(mysum);
+
+
+		//call back
+		function functionOne(x){
+			alert(x);
+		}
+
+		function functionTwo(var1,callback){
+			callback(var1);
+		}
+
+		functionTwo(2,functionOne);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

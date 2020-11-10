@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nested and closure</title>
+	<script type="text/javascript">
+		/*var counter=0;
+
+		function add(){
+			counter+=1;
+		}
+
+		add();
+		add();
+		add();
+		console.log(counter);*/
+
+		
+		//console.log(counter);
+
+		
+	/*	function add(){
+			var counter=0;
+			counter+=1;
+			console.log(counter);
+		}
+		add();
+		add();
+		add();
+		console.log(counter);*/
+
+//nested function
+		function add(){
+			var counter=0;
+			function plus(){
+				counter+=1;
+			}
+			plus();
+			plus();
+			plus();
+		console.log(counter);
+		}
+		add();
+		console.log(counter);
+
+		//we need counter value=3;
+	</script>
+</head>
+<body>
+
+</body>
+</html>
