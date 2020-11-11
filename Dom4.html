@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom Four</title>
+</head>
+<body>
+
+<h1>Js</h1>
+<p><h2>First Heading</h2></p>
+<p>This is first paragraph</p>
+<h2>Second Heading</h2>
+<p>This is second paragraph</p>
+<button id="btncount">Count</button>
+
+<script type="text/javascript">
+	var btn=document.getElementById("btncount");
+	btn.addEventListener('click', function(){
+		var heading=document.getElementsByTagName('h2');
+		console.log(heading);
+	})
+</script>
+</body>
+</html>

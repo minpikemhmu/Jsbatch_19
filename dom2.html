@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Two</title>
+</head>
+<body>
+	<img src="1.png" width="200" height="200" id="myimg" onmouseover="big()" onmouseout="normal()">
+
+	<script type="text/javascript">
+		function big(){
+			var myimg=document.getElementById("myimg");
+			myimg.setAttribute("width", '400');
+			myimg.setAttribute("height", '400');
+		}
+
+		function normal(){
+			var myimg=document.getElementById("myimg");
+			myimg.setAttribute("width", '200');
+			myimg.setAttribute("height", '200');
+
+			change();
+		}
+
+		function change(){
+			var myimg=document.getElementById("myimg");
+			var mysrc=myimg.getAttribute("src");
+			//console.log(mysrc);
+			if(mysrc=="1.png"){
+				myimg.setAttribute("src", "2.jpg")
+			}
+			else if(mysrc=="2.jpg"){
+				myimg.setAttribute("src", "3.jpg");
+			}else{
+				myimg.setAttribute("src", "1.png");
+			}
+		}
+
+	</script>
+
+</body>
+</html>

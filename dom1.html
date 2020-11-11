@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM One</title>
+</head>
+<body>
+
+	<h1>Js DOM</h1>
+	<p>JS <b>DOM</b> is funny</p>
+	<p class="myp">JS <b>DOM</b> is funny</p>
+	<p class="myp"></p>
+	<button onclick="show()">show</button>
+	<button onclick="showtag()">show tag</button>
+
+	<script type="text/javascript">
+		function show(){
+			//alert("ok");
+			var myp=document.getElementsByClassName("myp");
+			console.log(myp[0].innerHTML);
+			myp[0].style.color="red";
+			myp[1].innerHTML=myp[0].innerHTML;
+
+		}
+
+		function showtag(){
+			var mytags=document.getElementsByTagName('p');
+			console.log(mytags);
+			mytags[2].innerHTML=mytags[0].innerHTML+' '+mytags[1].innerHTML;
+		}
+	</script>
+
+</body>
+</html>

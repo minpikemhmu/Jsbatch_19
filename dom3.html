@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p></p>
+	<h1 onclick="click_event()">Create element</h1>
+	<input type="text" name="name" id="name">
+	<button onclick="add()">ADD</button>
+
+	<ul id="list">
+		<li id="mm">min pike</li>
+	</ul>
+
+	<script type="text/javascript">
+		function click_event(){
+			var btn=document.createElement("button");
+			btn.innerHTML="Click me";
+			document.body.appendChild(btn);
+
+		}
+		function add(){
+			var name=document.getElementById("name").value;
+			var mylist=document.getElementById("mm");
+			//console.log(name);
+			//var lsit=document.getElementById("list");
+			var list_item=document.createElement('li');
+			list_item.innerHTML=name;
+			//console.log(list_item);
+			mylist.appendChild(list_item);
+		}
+	</script>
+
+</body>
+</html>
