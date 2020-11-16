@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
+			$("#divedit").hide();
 			showdata();
 
 			$("#btnregister").click(function(){
@@ -50,11 +51,81 @@
 						<td>${v.address}</td>
 						<td>${v.age}</td>
 						<td>${v.gender}</td>
+						<td><button class="btnedit" data-id='${i}'>edit</button>
+						<button class="btndelete" data-id='${i}'>delete</button></td>
 						</tr>`
 					});
 					$("#mytbody").html(html);
 				}
 			}
+
+
+
+			$("#mytbody").on('click','.btnedit',function(){
+				$("#divregister").hide();
+				$("#divedit").show();
+				var id=$(this).data('id');
+				var studentlist=localStorage.getItem("student");
+				if(studentlist){
+					var studentArray=JSON.parse(studentlist);
+					var mystudent=studentArray[id];
+					console.log(mystudent);
+					var myname=mystudent.name;
+					var myage=mystudent.age;
+					var myaddress=mystudent.address;
+					var gender=mystudent.gender;
+					$("#myid").val(id);
+					$("#ename").val(myname);
+					$("#eage").val(myage);
+					$("#eaddress").val(myaddress);
+					if(gender=="male"){
+						$("#emale").prop("checked","checked");
+					}else{
+						$("#efemale").prop("checked","checked");
+					}
+				}
+				//console.log(id);
+			})
+
+
+			$("#btnupdate").click(function(){
+				var id=$("#myid").val();
+				var name=$("#ename").val();
+				var address=$("#eaddress").val();
+				var age=$("#eage").val();
+				var gender=$("input[name='gender']:checked").val();
+				var student={
+					name:name,
+					age:age,
+					address:address,
+					gender:gender,
+				}
+
+				var studentlist=localStorage.getItem("student");
+				if(studentlist){
+					var studentArray=JSON.parse(studentlist);
+					console.log(studentArray);
+					studentArray[id]=student;
+					var stringStudent=JSON.stringify(studentArray);
+					localStorage.setItem("student", stringStudent);
+					showdata();
+				}
+
+			})
+
+			$("#mytbody").on('click','.btndelete',function(){
+				var id=$(this).data('id');
+				var studentlist=localStorage.getItem("student");
+				if(studentlist){
+					var studentArray=JSON.parse(studentlist);
+					studentArray.splice(id, 1);
+					var stringStudent=JSON.stringify(studentArray);
+					localStorage.setItem("student", stringStudent);
+
+				}
+				showdata();
+
+			})
 
 		})
 	</script>
@@ -62,6 +133,7 @@
 <body>
 
 <div id="divregister">
+	<h1>Register Form</h1>
 	Name:<input type="text" name="" id="name"><br>
 	Age:<input type="text" name="" id="age"><br>
 	Address:<input type="text" name="" id="address"><br>
@@ -69,6 +141,18 @@
 	Male:<input type="radio" name="gender" value="male">
 	Female:<input type="radio" name="gender" value="female"><br>
 	<button id="btnregister">Register</button>
+</div>
+
+<div id="divedit">
+	<h1>Edit Form</h1>
+	<input type="hidden" name="" id="myid">
+	Name:<input type="text" name="" id="ename"><br>
+	Age:<input type="text" name="" id="eage"><br>
+	Address:<input type="text" name="" id="eaddress"><br>
+	Gender:<br>
+	Male:<input type="radio" name="gender" value="male" id="emale">
+	Female:<input type="radio" name="gender" value="female" id="efemale"><br>
+	<button id="btnupdate">Update</button>
 </div>
 
 <div>
@@ -80,12 +164,14 @@
 				<th>Age</th>
 				<th>Address</th>
 				<th>Gender</th>
+				<th>Action</th>
 			</tr>
 			
 		</thead>
 		<tbody id="mytbody">
 			
 		</tbody>
+
 	</table>
 	
 </div>
